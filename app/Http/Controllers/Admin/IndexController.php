@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Bookreview;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,6 +12,6 @@ class IndexController extends Controller
     }
 
     public function index(){
-        return view('bookreview.index.index');
+        return view('admin.index.index');
     }
 }

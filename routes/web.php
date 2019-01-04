@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::namespace('Bookreview')->group(function () {
+    Route::get('/', [
+        'uses' => 'IndexController@index',
+        'as' => 'bookreview.index.index'
+    ]);
+});

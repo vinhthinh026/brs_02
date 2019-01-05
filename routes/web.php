@@ -21,3 +21,16 @@ Route::namespace('Bookreview')->group(function () {
         'as' => 'bookreview.index.index'
     ]);
 });
+
+Route::namespace('Admin')->prefix('admin')->group(function () {
+
+    Route::get('/', [
+        'uses' => 'IndexController@index',
+        'as' => 'admin.index.index'
+    ]);
+
+    Route::get('/cat', [
+        'uses' => 'CategoryController@index',
+        'as' => 'admin.cat.index'
+    ]);
+});

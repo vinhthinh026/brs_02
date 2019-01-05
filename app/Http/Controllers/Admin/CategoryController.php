@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Bookreview;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class IndexController extends Controller
+class CategoryController extends Controller
 {
     public function __construct(){
 
     }
 
     public function index(){
-        return view('bookreview.index.index');
+        return view('admin.cat.index');
     }
 }

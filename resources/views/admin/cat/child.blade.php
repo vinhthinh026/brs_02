@@ -1,5 +1,6 @@
 @extends('templates.admin.master')
 @section('content')
+
     <div id="content" class="span10">
         <ul class="breadcrumb">
             <li>
@@ -10,7 +11,7 @@
             <li><a href="#">@lang('lable.category')</a></li>
         </ul>
 
-        <div style="margin-bottom:20px" class="row-fluid sortable">
+        <div class="row-fluid sortable">
             <div class="span12">
                 <a href="{{ route('cat.create') }}" class="btn btn-primary">@lang('lable.add')</a>
             </div>
@@ -30,7 +31,7 @@
                         <a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
                     </div>
                 </div>
-                <div class="box-content">
+                <a class="box-content">
                     <table class="table table-striped table-bordered bootstrap-datatable">
                         <thead>
                         <tr>
@@ -50,31 +51,26 @@
                             </tr>
                         @else
                             @foreach($objItemCats as $key => $objItemCat)
-                            <tr>
-                                <td>{!! $key !!}</td>
-                                <td class="center">{!! $objItemCat->cname !!}</td>
-                                <td class="center">
-                                    <a class="btn btn-info" href="{{route('cat.show', $objItemCat->cat_id)}}">
-                                        <i class=" ">@lang('lable.update')</i>
-                                    </a>
-                                    <div>
-                                        {{ Form::open(array('route' => array('cat.destroy', $objItemCat->cat_id), 'method' => 'delete')) }}
-                                        {!! Form::submit( trans('lable.delete'), ['class'=>'btn btn-danger']) !!}
-                                        {{ Form::close() }}
-                                    </div>
-                                    <div>
-                                        {{ Form::open(array('route' => array('childcategory.edit', 'id'=>$objItemCat->cat_id), 'method' => 'get')) }}
-                                        {!! Form::submit( trans('lable.child_cat'), ['class'=>'btn btn-danger']) !!}
-                                        {{ Form::close() }}
-                                    </div>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{!! $key !!}</td>
+                                    <td class="center">{!! $objItemCat->cname !!}</td>
+                                    <td class="center">
+                                        <a class="btn btn-info" href="{{route('cat.show', $objItemCat->cat_id)}}">
+                                            <i class=" ">@lang('lable.update')</i>
+                                        </a>
+                                        <a>
+                                            {{ Form::open(array('route' => array('cat.destroy', $objItemCat->cat_id), 'method' => 'delete')) }}
+                                            {!! Form::submit( trans('lable.delete'), ['class'=>'btn btn-danger']) !!}
+                                            {{ Form::close() }}
+                                        </a>
+                                    </td>
+                                </tr>
                             @endforeach
                         @endif
                         </tbody>
                     </table>
-                </div>
-            </div><!--/span-->
+            </div>
+        </div><!--/span-->
 
-        </div><!--/row-->
+    </div><!--/row-->
 @endsection

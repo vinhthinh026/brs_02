@@ -48,8 +48,8 @@
                     <a href="index.html"><i class="halflings-icon home"></i></a>
                     <a href="#"><i class="halflings-icon cog"></i></a>
                 </div>
-                <h2>@lang('lable.Login_to_your_account')</h2>
-                {!! Form::open(['method'=> 'POST', 'route'=> ['admin.login.index'] ]) !!}
+                <h2>@lang('lable.login_to_your_account')</h2>
+                {!! Form::open(['method'=> 'POST', 'route'=> ['login.store'] ]) !!}
 
                 <div class="input-prepend" title="Username">
                     {!! Form::text( 'username', old('username'), ['class'=>'input-large span10', 'placeholder'=> trans('lable.username')]) !!}

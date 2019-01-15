@@ -10,7 +10,7 @@ return [
         'en' => 'English',
         'vi' => 'Tiếng Việt',
     ],
-    'Dashboard' =>'Dashboard',
+    'dashboard' =>'Dashboard',
     'you_are_logged_in'=>'You are logged in!',
     'hello'=>'Hello',
     'delete'=>'Delete',
@@ -27,6 +27,9 @@ return [
     'delete' => 'Delete',
     'update'  => 'Update',
     'no_data' => 'No Data',
-    'You_sure_delete' => 'You sure delete',
+    'you_sure_delete' => 'You sure delete',
     'cancel' => 'Cancel',
+    'child_cat' => 'Categorys child',
+    'number' => 'ID',
+
 ];
